@@ -1,0 +1,30 @@
+testinfo:
+  - id: test_login001
+    title: 登录测试
+    info: 打开xttag首页
+testcase:
+  - element_info: "#app > section > div > div.el-card__body > form > div:nth-child(1) > div > div > input"
+    find_type: CSS_SELECTOR
+    operate_type: send_keys
+    info: 账号输入框
+  - element_info: "#app > section > div > div.el-card__body > form > div:nth-child(2) > div > div > input"
+    find_type: CSS_SELECTOR
+    operate_type: send_keys
+    info: 密码输入框
+  - element_info: "#app > section > div > div.el-card__body > form > div:nth-child(3) > div > button"
+    find_type: CSS_SELECTOR
+    operate_type: click
+    info: 登录按钮
+check:
+  - element_info: //*[@id="app"]/section/div/div[2]/form/div[1]/div/div[2]
+    find_type: XPATH
+    info: 账号为空提示
+  - element_info: //*[@id="app"]/section/div/div[2]/form/div[2]/div/div[2]
+    find_type: XPATH
+    info: 密码为空提示
+  - element_info: body > div.el-message.el-message--error.is-closable > p
+    find_type: CSS_SELECTOR
+    info: 失败提示
+  - element_info: body > div.el-message.el-message--success.is-closable > p
+    find_type: CSS_SELECTOR
+    info: 成功提示

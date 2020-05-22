@@ -1,0 +1,24 @@
+- id: test_login001.1
+  detail: 账号和密码错误
+  screenshot: acct_and_pwd_err
+  data:
+    account: rml
+    password: rml
+  check:
+    - 登录失败，再试一下吧
+- id: test_login001.2
+  detail: 账号和密码正确
+  screenshot: acct_and_pwd_are_correct
+  data:
+    account: admin
+    password: 123456
+  check:
+    - 登录成功
+- id: test_login001.3
+  detail: 账号为空
+  screenshot: acct_empty
+  data:
+    account: ""
+    password: ""
+  check:
+    - 账号不能为空
